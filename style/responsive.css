@@ -1,0 +1,53 @@
+@media screen and (max-width:700px) {
+    header .container-header {
+        display: block;
+        height: auto;
+    }
+    .container {
+        margin: 15px !important;
+        padding: 0;
+    }
+    .filme-principal {
+        height: 350px;
+        background-position: top;
+    }
+    .filme-principal .container {
+        width: 90%;
+        font-size: 0.8rem;
+    }
+    .filme-principal .titulo {
+        font-size: 30px;
+    }
+    .botoes {
+        display: flex;
+    }
+    .botao {
+        margin-top: 5px;
+        width: 300px;
+        padding: 15px 20px;
+        font-size: 10px;
+    }
+    .header-right {
+        display: none;
+    }
+    .modal-content {
+        width: 90%;
+        margin: auto;
+    }
+    .modal-body .filme-principal {
+        height: 300px;
+    }
+    .modal-bory .btnClose {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .owl-carousel {
+        margin: auto;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .descricao {
+        width: 50%;
+    }
+}

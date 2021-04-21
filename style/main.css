@@ -1,0 +1,657 @@
+:root {
+    --vermelho: #E50914;
+    --preta: #141414;
+    --preta2: #181818;
+    --cinza: #adadad;
+    --azul: #00637C;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* font-family: sans-serif;
+    font-size: 14px; */
+}
+
+
+/* elementos base */
+
+body {
+    background: var(--preta);
+    font-family: 'Arial', Times, serif;
+    color: white;
+}
+
+header .container-fluid {
+    padding: 0 32px;
+}
+
+header .container-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    width: 75%;
+}
+
+.header-right {
+    width: 25%;
+    justify-content: flex-end;
+}
+
+header .navbar .logo {
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+    height: 35px;
+}
+
+header .navbar .nav-item {
+    font-size: 14px;
+}
+
+header .navbar .nav-item a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+header .navbar .nav-item a:hover {
+    color: #FFF;
+}
+
+.container {
+    margin-left: 20px !important;
+}
+
+.header-right .pesquisa {
+    position: relative;
+    padding: 0 10px;
+}
+
+
+/* Styling the search box where the 
+    input would be given */
+
+.header-right .pesquisa input[type="text"] {
+    border: 0;
+    padding: 0;
+    width: 0px;
+    height: 35px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+
+/* Styling the search bar icon */
+
+.header-right .pesquisa .icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 100%;
+    background: none;
+    border-radius: 0px;
+    color: #fff;
+    transition: all 0.5s 0.3s ease;
+    font-size: 22px;
+}
+
+.header-right .pesquisa .icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.header-right .pesquisa .icon.active {
+    background: #062333;
+    transition: all 0.3s ease;
+}
+
+.header-right .pesquisa input[type="text"].active {
+    width: 200px;
+    padding: 0 10px;
+    transition: all 0.5s 0.2s ease;
+}
+
+.header-right i:nth-child(1),
+.header-right i:nth-child(2) {
+    font-size: 22px;
+}
+
+.header-right i:nth-child(2) {
+    padding: 0 10px;
+}
+
+.header-right .dropdown-menu {
+    background-color: rgba(0, 0, 0, .80);
+    left: -115px;
+    top: 135%;
+}
+
+.header-right .dropdown-menu .dropdown-item {
+    color: white;
+    font-size: 12px;
+}
+
+.header-right .dropdown-menu .dropdown-divider {
+    color: var(--cinza);
+}
+
+.header-right .dropdown-menu .dropdown-item i {
+    font-size: 18px;
+}
+
+.header-right .dropdown-menu .dropdown-item i,
+.header-right .dropdown-menu .dropdown-item img {
+    margin-right: 5px;
+}
+
+.header-right .dropdown-menu .dropdown-item:focus,
+.header-right .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(204, 204, 204, 0.50);
+}
+
+
+/* account */
+
+.account {
+    height: 30px;
+    width: 35px;
+    margin: 0 10px;
+}
+
+.account img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8%;
+}
+
+
+/* filme principal */
+
+.filme-principal {
+    font-size: 16px;
+    background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)100%), url('../img/capa-efesios.png');
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .container {
+    width: 70%;
+}
+
+.filme-principal .titulo {
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.filme-principal .descricao {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+/* filme progresso */
+
+.filme-progresso {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+
+/* progress bar */
+
+ul.progress-bar {
+    width: 55%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+ul.progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: var(--cinza);
+    height: 5px;
+    width: 100vh;
+}
+
+ul.progress-bar li {
+    background: var(--vermelho);
+    border-radius: 100px;
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+    position: relative;
+}
+
+ul.progress-bar li::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: var(--vermelho);
+    height: 5px;
+    width: 100vh;
+}
+
+ul.progress-bar li.stop~li,
+ul.progress-bar li.stop~li::after {
+    background: var(--cinza);
+}
+
+.filme-progresso .progresso {
+    margin-left: 5px;
+}
+
+.botoes .botao {
+    background-color: rgba(0, 0, 0, .50);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    border-radius: 8px;
+}
+
+.botoes .botao:hover {
+    background-color: white;
+    color: black;
+}
+
+.botoes .botao i {
+    margin-right: 8px;
+}
+
+.item {
+    overflow: hidden;
+}
+
+.box-filme {
+    height: 100%;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.box-filme {
+    transition: all 0.3s ease-out;
+}
+
+.box-filme:hover {
+    transform: scale(1.05);
+}
+
+.carrosel-filmes {
+    margin-top: 5px;
+}
+
+
+/* modal assistir */
+
+.modal-content {
+    border-radius: 8%;
+}
+
+.modal-body .btnClose {
+    color: var(--preta);
+    z-index: 999;
+    position: absolute;
+    left: 95%;
+    font-size: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.modal-body .fa-times-circle:before {
+    content: "\f057";
+    color: white;
+    background: black;
+    border-radius: 50%;
+}
+
+.modal-body .filme-principal {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 350px;
+}
+
+.modal-body .filme-principal .titulo {
+    font-size: 30px;
+}
+
+.modal-body .filme-principal .botoes span {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.modal-body .filme-principal .botoes span:hover {
+    color: rgba(255, 255, 255, 0.753);
+}
+
+.tooltip>.tooltip-inner {
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.tooltip>.tooltip-arrow {
+    margin-top: 5px;
+}
+
+.modal-body .filme-principal .container {
+    margin-top: 15%;
+}
+
+.modal-body .filme-principal .botao {
+    background-color: white;
+    color: var(--preta);
+}
+
+.modal-body .filme-principal .botao:hover {
+    background-color: rgba(255, 255, 255, 0.753);
+}
+
+.modal-body .filme-descricao {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    background: var(--preta2);
+    min-height: 200px;
+    padding: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.filme-descricao .filme-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.filme-descricao .info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+
+.filme-descricao .info:nth-child(1) {
+    width: 50%;
+    justify-content: space-between;
+}
+
+.filme-descricao .info .descricao {
+    width: 85%;
+    line-height: 27px;
+}
+
+.filme-descricao .info .ano {
+    background-color: #e7792b;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.filme-descricao .info .periodo {
+    font-weight: bold;
+}
+
+.filme-descricao .info .lingua {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.filme-descricao .info .lingua img {
+    width: 20px;
+    height: 100%;
+    margin: 0 3px;
+}
+
+.filme-descricao .filme-tags {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-tags .categorias .tag {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.filme-tags .categorias .tag-item {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.filme-tags .categorias .tag-item a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* carrosel */
+
+.filmes-categoria .carrosel-titulo a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* footer */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+    margin: auto;
+}
+
+.footer .social span {
+    font-size: 2.3rem;
+    color: var(--cinza);
+    cursor: pointer;
+}
+
+ul.links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+li.link {
+    flex-basis: 25%;
+    list-style-type: none;
+    font-size: 13px;
+}
+
+li.link a {
+    text-decoration: none;
+    color: var(--cinza);
+}
+
+.footer .copyright {
+    margin: auto;
+    font-size: 11px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.footer .copyright span {
+    color: var(--vermelho);
+}
+
+
+/* modal assistir */
+
+.filme-episodios {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: var(--preta2);
+    min-height: 200px;
+    padding: 15px 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.filme-episodios .episodios-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.filme-episodios .episodios-titulo h4.titulo {
+    font-weight: bold;
+}
+
+.filme-episodios .episodios-titulo select.custom-select {
+    width: 150px;
+    border: 1px solid white;
+    color: var(--preta);
+    font-weight: bold;
+}
+
+ul.episodios {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+ul.episodios li.episodio {
+    border-top: 1px solid #333333;
+    padding: 16px;
+    border-radius: 3px;
+}
+
+ul.episodios li.episodio>a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, .55);
+}
+
+ul.episodios li.episodio.active {
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+}
+
+h2.epi-1 {
+    width: 10%;
+}
+
+img.epi-2 {
+    width: 130px;
+    height: 73px;
+    border-radius: 8px;
+}
+
+div.epi-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+div.epi-3-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 16px 16px 8px;
+    width: 100%;
+    color: white;
+}
+
+div.epi-3-1 p {
+    margin-bottom: 0;
+}
+
+.epi-3-2 {
+    font-size: 14px;
+    padding: 0 14px 14px;
+    margin-bottom: 0;
+}
+
+div.opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+div.opcoes>.view small {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .55);
+}
+
+div.opcoes>.date-view,
+div.opcoes>.botao {
+    margin-left: 10px;
+}
+
+div.opcoes>.date-view small {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .55);
+}
+
+div.opcoes>.botao a {
+    min-width: 85px;
+    color: white;
+}
