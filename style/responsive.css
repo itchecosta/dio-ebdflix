@@ -20,6 +20,7 @@
     }
     .botoes {
         display: flex;
+        align-items: center;
     }
     .botao {
         margin-top: 5px;
@@ -30,19 +31,53 @@
     .header-right {
         display: none;
     }
+
+    /* .item {
+        width: 150px !important;
+    }
+
+    .box-filme {
+        height: 100%;
+        width: 100%;
+        display: block;
+        cursor: pointer;
+    } */
+
     .modal-content {
-        width: 90%;
+        width: 95%;
         margin: auto;
     }
     .modal-body .filme-principal {
         height: 300px;
     }
-    .modal-bory .btnClose {
+    .modal-body .btnClose {
         font-size: 30px;
         margin-top: 10px;
+        left: 90%;
     }
     .owl-carousel {
         margin: auto;
+    }
+
+    .filme-descricao .filme-informacao {
+        flex-direction: column !important;
+    }
+
+    .filme-episodios {
+        padding: 10px 10px;
+    }
+
+    .episodio .epi-3-1 {
+        align-items: flex-end;
+        flex-direction: column-reverse;
+    }
+
+    .episodio .epi-1, .episodio .epi-3 .epi-3-2, .opcoes .view, .opcoes .date-view {
+        display: none;
+    }
+
+    .footer {
+        margin-left: 0px !important;
     }
 }
 
